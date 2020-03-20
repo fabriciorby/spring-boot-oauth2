@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Login Success</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"/>
+</head>
+<body>
+<h3>
+    <h3>User Info:</h3>
+    <div th:each="info : ${userInfo}">
+        <p><span th:text="${info.key}"></span>: <span th:text="${info.value}"></span></p>
+    </div>
+
+    <h3>Authorization</h3>
+    <p th:text="${accessToken}"></p>
+
+    <h3>Scopes</h3>
+    <div th:each="scope : ${scopes}">
+        <p th:text="${scope}"></p>
+    </div>
+</h3>
+</body>
+</html>

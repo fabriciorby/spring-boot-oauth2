@@ -1,0 +1,30 @@
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: spring-boot
+            client-secret: bfd4a2ef-f167-4811-aa16-8df29ef5b80b
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:3000/login/oauth2/code/keycloak
+            scope: openid, profile
+            client-name: Keycloak
+            client-authentication-method: basic
+        provider:
+          keycloak:
+            authorization-uri: http://localhost:8080/auth/realms/master/protocol/openid-connect/auth
+            token-uri: http://localhost:8080/auth/realms/master/protocol/openid-connect/token
+            user-info-uri: http://localhost:8080/auth/realms/master/protocol/openid-connect/userinfo
+            user-name-attribute: sub
+            jwk-set-uri: http://localhost:8080/auth/realms/master/protocol/openid-connect/certs
+
+server:
+  port: 3000
+
+logging:
+  level:
+    root: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.boot.autoconfigure: DEBUG

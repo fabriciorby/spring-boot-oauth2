@@ -1,0 +1,11 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        opaque-token:
+          introspection-uri: http://localhost:8080/auth/realms/master/protocol/openid-connect/token/introspect
+          client-id: resource-introspection
+          client-secret: 88ef2b75-df0c-40e7-9cf5-6c559bfcc63b
+
+server:
+  port: 3001
